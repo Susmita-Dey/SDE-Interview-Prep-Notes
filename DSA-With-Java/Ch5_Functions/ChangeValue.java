@@ -9,8 +9,7 @@ public class ChangeValue {
     }
 
     static void change(int[] nums) {
-        // If you make a change to the object via this ref. variable, same object will
-        // be changed.
+        // If you make a change to the object via this reference variable, same object will be changed.
         nums[0] = 99;
     }
 }

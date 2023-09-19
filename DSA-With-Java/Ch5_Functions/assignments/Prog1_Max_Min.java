@@ -1,3 +1,5 @@
+package assignments;
+
 import java.util.Scanner;
 
 public class Prog1_Max_Min {

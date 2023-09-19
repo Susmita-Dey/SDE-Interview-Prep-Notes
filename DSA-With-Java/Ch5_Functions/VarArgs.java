@@ -24,5 +24,4 @@ public class VarArgs {
     } // ...variable -> creates an array of varying length
 }
 
-// NOTE:-variable length arguments must be declared at last of all other
-// variables.
+// NOTE:-variable length arguments must be declared at last of all other variables.

@@ -22,7 +22,7 @@ public class Scope {
         System.out.println(name);
         // System.out.println(c); // cannot use outside the block
 
-        // System.out.println(num); //not accessible
+        // System.out.println(num); // not accessible
 
         // scoping in for loops
         for (int i = 0; i < 4; i++) {
@@ -46,10 +46,8 @@ public class Scope {
  * NOTE:-
  * Scope of variables & objects:-
  * 
- * Anything(variables, objects) that is declared and initialised outside the
- * block can be used inside the block.
+ * Anything(variables, objects) that is declared and initialised outside the block can be used inside the block.
  * On the other hand anything(variables, objects) that is declared and
- * initialised inside the block cannot be used outside of the block; but can
- * definitely be declared and re-initialised the same outside the block(after the block).
+ * initialised inside the block cannot be used outside of the block; but can definitely be declared and re-initialised the same outside the block(after the block).
  * Functions,for loops, blocks all have their own scope.
  */
