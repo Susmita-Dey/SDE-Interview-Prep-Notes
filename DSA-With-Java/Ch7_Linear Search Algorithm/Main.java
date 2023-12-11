@@ -45,7 +45,7 @@ public class Main {
 
         // this line will execute if none of the return statements above have executed
         // hence the target not found
-        return -1;
+        return Integer.MAX_VALUE;
     }
 
     // search the target and return true or false

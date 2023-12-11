@@ -1,5 +1,4 @@
 public class Main {
-// Video ended at 17:00 
     public static void main(String[] args) {
         // Q: store a roll number
         int a = 19;
@@ -33,3 +32,6 @@ public class Main {
 
     }
 }
+
+// Arrays in Java may not be continuous due to JVM.
+// But in C++ they are continuous.
