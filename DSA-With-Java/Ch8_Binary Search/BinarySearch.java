@@ -8,7 +8,7 @@ public class BinarySearch {
 
     // return the index
     // return -1 if it does not exist
-    static int binarySearch(int[] arr, int target) {
+    public static int binarySearch(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
 
