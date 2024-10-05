@@ -1,5 +1,6 @@
 /* 
  * Leetcode question: https://leetcode.com/problems/roman-to-integer/
+ * Difficulty level: Easy
 */
 
 class RomanToInteger {

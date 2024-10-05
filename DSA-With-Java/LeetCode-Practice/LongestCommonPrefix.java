@@ -1,5 +1,6 @@
 /*
  * Leetcode question: https://leetcode.com/problems/longest-common-prefix/
+ * Difficulty level: Easy
  */
 
 public class LongestCommonPrefix {
