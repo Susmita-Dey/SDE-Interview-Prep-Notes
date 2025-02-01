@@ -1,5 +1,6 @@
 /*
  * Leetcode question:- https://leetcode.com/problems/valid-parentheses/
+ * Difficulty level: Easy
  * Time Complexity for my solution is O(N)
  */
 
