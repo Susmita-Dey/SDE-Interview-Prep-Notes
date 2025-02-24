@@ -46,7 +46,7 @@ public class VehiclesWheels {
         int fw = (w - (2 * v)) / 2;
         int tw = v - fw;
 
-        if (w < 2 || w % 2 != 0 || v > w) {
+        if (w < 2 || w % 2 != 0 || v > w || fw < 0 || tw < 0) {
             System.out.println("INVALID INPUT");
         } else {
             System.out.println("TW = " + tw + " FW = " + fw);
