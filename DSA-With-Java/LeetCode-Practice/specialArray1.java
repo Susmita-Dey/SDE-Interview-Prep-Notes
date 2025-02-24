@@ -5,8 +5,6 @@
  * Space complexity: O(1)
  */
 
-import java.util.*;
-
 class Solution {
     public boolean isArraySpecial(int[] nums) {
         if(nums.length==1){

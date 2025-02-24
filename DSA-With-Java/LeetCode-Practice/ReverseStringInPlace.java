@@ -10,7 +10,7 @@ public class ReverseStringInPlace {
         Scanner sc = new Scanner(System.in);
 
         char[] ch = new char[5];
-        Character[] character = sc.next();
+        // Character[] character = sc.next();
 
         sc.close();
     }
