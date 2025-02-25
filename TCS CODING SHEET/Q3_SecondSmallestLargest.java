@@ -23,7 +23,52 @@ Explanation:
 */
 
 public class Q3_SecondSmallestLargest {
+    public static int findSecondSmallest(int arr[]) {
+        int secondMinEle = Integer.MAX_VALUE;
+        int minEle = Integer.MAX_VALUE;
+
+        if (arr.length < 2) {
+            return -1;
+        } else {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] < minEle) {
+                    minEle = arr[i];
+                }
+            }
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] < secondMinEle && arr[i] != minEle) {
+                    secondMinEle = arr[i];
+                }
+            }
+        }
+
+        return secondMinEle;
+    }
+
+    public static int findSecondLargest(int arr[]) {
+        int secondMaxEle = Integer.MIN_VALUE;
+        int maxEle = Integer.MIN_VALUE;
+
+        if (arr.length < 2) {
+            return -1;
+        } else {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > maxEle) {
+                    secondMaxEle = maxEle;
+                    maxEle = arr[i];
+                } else if (arr[i] > secondMaxEle && arr[i] != maxEle) {
+                    secondMaxEle = arr[i];
+                }
+            }
+        }
+
+        return secondMaxEle;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 8, 10, 5, 7, 9 };
+
+        System.out.println(
+                "Second Smallest : " + findSecondSmallest(arr) + "\nSecond Largest : " + findSecondLargest(arr));
     }
 }
