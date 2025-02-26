@@ -1,3 +1,4 @@
+package Arrays;
 /*
  * Q1. Find the smallest element in an array
  * 

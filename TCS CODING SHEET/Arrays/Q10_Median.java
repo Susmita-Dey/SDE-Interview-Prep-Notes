@@ -1,3 +1,4 @@
+package Arrays;
 /* Find Median of the given Array
 Problem Statement: Given an unsorted array, find the median of the given array.
 
@@ -32,27 +33,23 @@ public class Q10_Median {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<Integer> numbers = new ArrayList<>();
-        while (sc.hasNextInt()) {
-            numbers.add(sc.nextInt());
-        }
-        
-        // Convert ArrayList to array
-        int n = numbers.size();
+        String[] input = sc.nextLine().split(" ");
+
+        int n = input.length;
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = numbers.get(i);
+            arr[i] = Integer.parseInt(input[i]);
         }
 
         bubbleSort(arr);
 
-        int n = arr.length;
+        int len = arr.length;
         double median = 0;
 
-        if (n % 2 != 0) {
-            median = arr[n / 2];
+        if (len % 2 != 0) {
+            median = arr[len / 2];
         } else {
-            median = (arr[(n - 1) / 2] + arr[n / 2]) / 2.0;
+            median = (arr[(len - 1) / 2] + arr[len / 2]) / 2.0;
         }
 
         System.out.println(median);

@@ -1,3 +1,4 @@
+package Numbers;
 /*
  * Q: Find all palindrome numbers in the range of A to B.
  * Input: A = 100, B = 150
@@ -7,7 +8,7 @@
 
 import java.util.*;
 
-public class PalindromeInRange {
+public class Q2_PalindromeInRange {
 
     public static boolean isPalindrome(int num) {
         int rem = 0, rev = 0, original = num;

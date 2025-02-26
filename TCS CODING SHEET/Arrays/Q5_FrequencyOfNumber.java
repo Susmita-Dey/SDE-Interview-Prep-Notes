@@ -1,3 +1,4 @@
+package Arrays;
 /* Count frequency of each element in the array
 
 Problem statement: Given an array, we have found the number of occurrences of each element in the array.

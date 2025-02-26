@@ -1,3 +1,4 @@
+package Arrays;
 /* Rearrange array in increasing-decreasing order
 
 Problem Statement: Rearrange the array such that the first half is arranged in increasing order, and the second half is arranged in decreasing order
