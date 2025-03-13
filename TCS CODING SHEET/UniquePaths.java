@@ -6,7 +6,7 @@
  * An integer representing the total unique paths.
  * Example 1:
  * 3 7
- * Output: 8
+ * Output: 28
  * Example 2:
  * 4 3
  * Output: 10
@@ -15,24 +15,43 @@
 import java.util.Scanner;
 
 public class UniquePaths {
-    public static int noOfUniquePaths(int row, int col, int m, int n) {
+    public static int findPaths(int row, int col, int m, int n, int[][] dp) {
         if (row >= m || col >= n || row < 0 || col < 0) {
             return 0;
-        } else if (row == m - 1 && col == n - 1) {
+        }
+        if (row == m - 1 && col == n - 1) {
             return 1;
         }
+        if (dp[row][col] != -1) {
+            return dp[row][col];
+        }
 
-        int down = noOfUniquePaths(row + 1, col, m, n);
-        int right = noOfUniquePaths(row, col + 1, m, n);
-        return down + right;
+        int down = findPaths(row + 1, col, m, n, dp);
+        int right = findPaths(row, col + 1, m, n, dp);
+        return dp[row][col] = down + right;
+    }
+
+    public static int noOfUniquePaths(int m, int n) {
+        int[][] dp = new int[m][n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                dp[i][j] = -1;
+            }
+        }
+
+        return findPaths(0, 0, m, n, dp);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int m = sc.nextInt();
-        int n = sc.nextInt();
+        String input = sc.nextLine();
 
-        System.out.println(noOfUniquePaths(0, 0, m, n));
+        int spaceIndex = input.lastIndexOf(' ');
+        int m = Integer.parseInt(input.substring(0, spaceIndex));
+        int n = Integer.parseInt(input.substring(spaceIndex + 1));
+
+        System.out.println(noOfUniquePaths(m, n));
 
         sc.close();
     }

@@ -20,13 +20,13 @@ public class CheckDifference {
 
         String nums = sc.nextLine();
         String[] numStrings = nums.split(" ");
-        int[] arr = new int[numStrings.length];
+        int[] arr = new int[numStrings.length - 1];
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(numStrings[i]);
         }
 
-        int k = sc.nextInt();
+        int k = Integer.parseInt(numStrings[numStrings.length - 1]);
         int count = 0;
 
         // Find pairs (i, j) where i < j and |arr[i] - arr[j]| == k
