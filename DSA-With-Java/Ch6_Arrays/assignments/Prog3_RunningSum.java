@@ -20,7 +20,6 @@ Output: [3,4,6,16,17]
  
  */
 
-package assignments;
 
 public class Prog3_RunningSum {
     public static void main(String[] args) {

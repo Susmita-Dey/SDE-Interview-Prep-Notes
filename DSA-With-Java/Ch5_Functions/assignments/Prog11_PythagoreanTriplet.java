@@ -1,8 +1,6 @@
-package assignments;
-
 import java.util.Scanner;
 
-public class Prog12_PythagoreanTriplet {
+public class Prog11_PythagoreanTriplet {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter 5 numbers: ");

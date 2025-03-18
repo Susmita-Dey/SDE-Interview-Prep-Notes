@@ -23,7 +23,6 @@ ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]]
 Link: https://leetcode.com/problems/build-array-from-permutation/
  */
 
-package assignments;
 
 public class Prog1_BuildArrayfromPermutation {
     public static void main(String[] args) {

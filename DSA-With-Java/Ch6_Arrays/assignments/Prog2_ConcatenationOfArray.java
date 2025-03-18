@@ -1,4 +1,3 @@
-package assignments;
 
 public class Prog2_ConcatenationOfArray {
 
