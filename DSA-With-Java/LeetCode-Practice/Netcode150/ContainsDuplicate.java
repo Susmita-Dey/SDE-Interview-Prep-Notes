@@ -1,3 +1,5 @@
+package Netcode150;
+
 /*
  * Leetcode question: https://leetcode.com/problems/contains-duplicate/
  * Difficulty: Easy
