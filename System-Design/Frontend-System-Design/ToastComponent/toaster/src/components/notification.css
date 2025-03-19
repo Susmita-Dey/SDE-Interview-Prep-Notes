@@ -24,3 +24,34 @@
 .info {
   background-color: #2196f3;
 }
+
+.closeBtn {
+  margin-left: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.top-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.top-left {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.bottom-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.bottom-left {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}

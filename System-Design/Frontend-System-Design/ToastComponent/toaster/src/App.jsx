@@ -1,19 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import useNotification from "./hooks/use-notification";
+import "./App.css";
 
 function App() {
-  // custom hook - useNotification(position)
+  const { NotificationComponent, triggerNotification } =
+    useNotification("top-right");
 
   return (
-    <>
-      <h1>Hello, I am a Toaster</h1>
-      <p className="read-the-docs">
-        I give beautiful toasts to your users.
-      </p>
-    </>
-  )
+    <div className="App">
+      {NotificationComponent}
+      <h1>Toast Component</h1>
+      <div className="btns">
+        <button
+          onClick={() =>
+            triggerNotification({
+              type: "success",
+              message: "This is a success message!",
+              duration: 3000,
+              animation: "pop",
+            })
+          }
+        >
+          Show Success
+        </button>
+        <button
+          onClick={() =>
+            triggerNotification({
+              type: "info",
+              message: "This is an info message!",
+              duration: 3000,
+            })
+          }
+        >
+          Show Info
+        </button>
+        <button
+          onClick={() =>
+            triggerNotification({
+              type: "warning",
+              message: "This is a warning message!",
+              duration: 3000,
+            })
+          }
+        >
+          Show Warning
+        </button>
+        <button
+          onClick={() =>
+            triggerNotification({
+              type: "error",
+              message: "This is an error message!",
+              duration: 3000,
+            })
+          }
+        >
+          Show Error
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
