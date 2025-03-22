@@ -7,7 +7,20 @@ const SuggestionsList = ({
   onSuggestionsClick,
 }) => {
   const getHightightedText = (text, highlight) => {
-    return text;
+    const parts = text.split(new RegExp(`(${highlight})`, "gi"));
+    console.log(parts);
+
+    return (
+      <span>
+        {parts.map((part, index) =>
+          part.toLowerCase() === highlight.toLowerCase() ? (
+            <strong key={index}>{part}</strong>
+          ) : (
+            part
+          )
+        )}
+      </span>
+    );
   };
 
   return (

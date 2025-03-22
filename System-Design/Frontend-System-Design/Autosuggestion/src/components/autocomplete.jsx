@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "../App.css";
 import SuggestionsList from "./suggestions-list";
+import debounce from "lodash";
 
 const Autocomplete = ({
   placeholder = "",
@@ -47,16 +48,26 @@ const Autocomplete = ({
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getSuggestionsDebounced = useCallback(
+    debounce(getSuggestions, 300),
+    []
+  );
+
   useEffect(() => {
     if (inputValue.length > 1) {
-      getSuggestions(inputValue);
+      getSuggestionsDebounced(inputValue);
     } else {
       setSuggestions([]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue]);
 
-  const handleSuggestionClick = () => {};
+  const handleSuggestionClick = (suggestion) => {
+    setInputValue(datakey ? suggestion[datakey] : dataKey);
+    onSelect(suggestion);
+    setSuggestions([]);
+  };
 
   return (
     <div className="container">
@@ -69,7 +80,7 @@ const Autocomplete = ({
         onChange={handleInputChange}
       />
       {(suggestions.length > 0 || loading || error) && (
-        <ul>
+        <ul className="suggestions-list">
           {loading && <div className="loading">{customLoading}</div>}
           {error && <div className="error">{error}</div>}
           <SuggestionsList
