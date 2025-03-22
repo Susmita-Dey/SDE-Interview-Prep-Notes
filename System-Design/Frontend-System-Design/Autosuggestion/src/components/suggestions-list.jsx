@@ -3,22 +3,21 @@ import React from "react";
 const SuggestionsList = ({
   suggestions = [],
   highlight,
-  datakey,
-  onSuggestionsClick,
+  dataKey,
+  onSuggestionClick,
 }) => {
-  const getHightightedText = (text, highlight) => {
+  const getHighlightedText = (text, highlight) => {
     const parts = text.split(new RegExp(`(${highlight})`, "gi"));
-    console.log(parts);
 
     return (
       <span>
-        {parts.map((part, index) =>
-          part.toLowerCase() === highlight.toLowerCase() ? (
+        {parts.map((part, index) => {
+          return part.toLowerCase() === highlight.toLowerCase() ? (
             <strong key={index}>{part}</strong>
           ) : (
             part
-          )
-        )}
+          );
+        })}
       </span>
     );
   };
@@ -26,15 +25,16 @@ const SuggestionsList = ({
   return (
     <React.Fragment>
       {suggestions.map((suggestion, index) => {
-        const currSuggestion = datakey ? suggestion[datakey] : suggestion;
+        const currSuggestion = dataKey ? suggestion[dataKey] : suggestion;
 
         return (
           <li
             key={index}
-            onClick={() => onSuggestionsClick(suggestion)}
+            onClick={() => onSuggestionClick(suggestion)}
             className="suggestion-item"
+            id={`suggestion-${index}`}
           >
-            {getHightightedText(currSuggestion, highlight)}
+            {getHighlightedText(currSuggestion, highlight)}
           </li>
         );
       })}

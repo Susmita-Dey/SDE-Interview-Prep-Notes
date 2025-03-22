@@ -2,24 +2,24 @@ import "./App.css";
 import Autocomplete from "./components/autocomplete";
 
 function App() {
-  const staticData = [
-    "Pasta",
-    "Pizza",
-    "Burger",
-    "Sandwich",
-    "Noodles",
-    "Pancake",
-    "Waffles",
-    "Tacos",
-    "Burritos",
-    "Sushi",
-    "Ramen",
-    "Donut",
-    "Ice Cream",
-    "Cake",
-    "Cookies",
-    "Brownies",
-  ];
+  // const staticData = [
+  //   "Pasta",
+  //   "Pizza",
+  //   "Burger",
+  //   "Sandwich",
+  //   "Noodles",
+  //   "Pancake",
+  //   "Waffles",
+  //   "Tacos",
+  //   "Burritos",
+  //   "Sushi",
+  //   "Ramen",
+  //   "Donut",
+  //   "Ice Cream",
+  //   "Cake",
+  //   "Cookies",
+  //   "Brownies",
+  // ];
 
   const fetchSuggestions = async (query) => {
     const response = await fetch(
@@ -37,7 +37,7 @@ function App() {
       <h1>Autocomplete/Typeahead</h1>
       <Autocomplete
         placeholder={"Enter Recipe Name"}
-        staticData={staticData}
+        // staticData={staticData}
         fetchSuggestions={fetchSuggestions}
         datakey={"name"}
         customLoading={<div>Loading Recipes...</div>}
@@ -45,6 +45,7 @@ function App() {
         onChange={(input) => {
           console.log(input);
         }}
+        caching={true}
         onBlur={(e) => {
           console.log(e);
         }}
